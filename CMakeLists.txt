@@ -184,10 +184,6 @@ if(realsense2_FOUND)
     add_executable(stereo_realsense_D435i
             Examples/Stereo/stereo_realsense_D435i.cc)
     target_link_libraries(stereo_realsense_D435i ${PROJECT_NAME})
-
-    add_executable(stereo_tello
-            Examples/Stereo/stereo_tello.cc)
-    target_link_libraries(stereo_tello ${PROJECT_NAME})
 endif()
 
 #Monocular examples
@@ -208,6 +204,10 @@ target_link_libraries(mono_euroc ${PROJECT_NAME})
 add_executable(mono_tum_vi
         Examples/Monocular/mono_tum_vi.cc)
 target_link_libraries(mono_tum_vi ${PROJECT_NAME})
+
+add_executable(mono_tello
+        Examples/Monocular/mono_tello.cc)
+target_link_libraries(mono_tello ${PROJECT_NAME})
 
 if(realsense2_FOUND)
     add_executable(mono_realsense_t265
