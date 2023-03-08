@@ -17,9 +17,9 @@ include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
 CHECK_CXX_COMPILER_FLAG("-std=c++0x" COMPILER_SUPPORTS_CXX0X)
 if(COMPILER_SUPPORTS_CXX11)
-   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
    add_definitions(-DCOMPILEDWITHC11)
-   message(STATUS "Using flag -std=c++11.")
+   message(STATUS "Using flag -std=c++14.")
 elseif(COMPILER_SUPPORTS_CXX0X)
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
    add_definitions(-DCOMPILEDWITHC0X)
@@ -184,6 +184,10 @@ if(realsense2_FOUND)
     add_executable(stereo_realsense_D435i
             Examples/Stereo/stereo_realsense_D435i.cc)
     target_link_libraries(stereo_realsense_D435i ${PROJECT_NAME})
+
+    add_executable(stereo_tello
+            Examples/Stereo/stereo_tello.cc)
+    target_link_libraries(stereo_tello ${PROJECT_NAME})
 endif()
 
 #Monocular examples
