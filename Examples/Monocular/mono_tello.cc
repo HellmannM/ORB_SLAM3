@@ -65,7 +65,7 @@ int main(int argc, char **argv) {
     b_continue_session = true;
 
 
-    cv::VideoCapture cap("udp://@0.0.0.0:11111");
+    cv::VideoCapture cap("udp://@0.0.0.0:11111?overrun_nonfatal=1");
     if (cap.isOpened() == false)  
     {
         cout << "Cannot open udp port for Tello" << endl;
